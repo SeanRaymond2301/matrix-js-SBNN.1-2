@@ -30,7 +30,7 @@ To cover some bases:
 
 My goals for this Matrix Library(to be named at a later date) is to be able to create a matrix object.
 	This matrix object will have Xv0 number of columns, Xv1 number of rows, and an empty array I will call data.
-		"data" will be initialized when the object is created to have values of random numbers chosen with the Math.random vanilla JavaScript function.
+		"data" will be initialized when the object is created to have values of 0 unless the "randomize" method randomizes the numbers chosen with the Math.random vanilla JavaScript function.
 			I am choosing to use random numbers to save myself the hassle of other methods of sophisticated number picking which I can implement at any point later on.
 				I could potentially decide to initialize all of the data in the array as 0, however I feel this may hinder the Neural Network should it ever get more advanced.
 		"data"'s initialization will create a "two dimensional array" to store the data in a row-column layout to be able to index through them.
