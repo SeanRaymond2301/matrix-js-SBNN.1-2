@@ -26,6 +26,7 @@ function Matrix(rows, cols) {
         //Returns the matrix using this method with "data" being modified.
             //I will add a static version of this that returns a new array, and takes two parameters instead of one.
     this.add = function(m2) {
+            //element wise product
         if (typeof(m2) == 'object') {
             if (this.rows == m2.rows && this.cols == m2.cols) {
                 for (let i = 0; i < this.cols; i++) {
@@ -42,6 +43,7 @@ function Matrix(rows, cols) {
 
 
     this.multiply = function(m2) {
+            //element wise product
         if (typeof(m2) == 'object') {
             if (this.rows == m2.rows && this.cols == m2.cols) {
                 for (let i = 0; i < this.cols; i++) {
@@ -51,8 +53,14 @@ function Matrix(rows, cols) {
                 }
                 return this.data;
             } else {
-                return;
+                    //scalar product
+                for (let i = 0; i < this.cols; i++) {
+                    for (let j = 0; j < this.rows; j++) {
+                        this.data[i][j] = this.data[i][j] * m2;
+                    }
+                }
             }
+            return this.data;
         }
     }
 
@@ -60,7 +68,7 @@ function Matrix(rows, cols) {
         var a = new Matrix(this.rows, this.cols);
         for (let i = 0; i < this.cols; i++) {
             for (let j = 0; j < this.rows; j++) {
-                a.data[i].push(this.data[j][i]);
+                a.data[i][j] == this.data[j][i];
             }
         }
         return a.data;
@@ -69,6 +77,7 @@ function Matrix(rows, cols) {
 }
 
     //Creates a new matrix
+        //element wise product
 function add(m1, m2) {
     if(typeof(m1) == 'object' && typeof(m2) == 'object') {
         var a = new Matrix(m1.rows, m1.cols);
@@ -80,12 +89,14 @@ function add(m1, m2) {
             }
             return a.data;
         } else {
-        return;
+            //add scalar product
+            return;
         }
     }
 }
 
 function multiply(m1, m2) {
+        //element wise product
     if(typeof(m1) == 'object' && typeof(m2) == 'object') {
         var a = new Matrix(m1.rows, m1.cols);
         if (m1.rows == m2.rows && m1.cols == m2.cols) {
@@ -96,11 +107,12 @@ function multiply(m1, m2) {
             }
             return a.data;
         } else {
-        return;
+            //add scalar product
+            return;
         }
     }
 }
 
 function dotProduct(m1, m2) {
-
+    //Make dis a thing
 }
