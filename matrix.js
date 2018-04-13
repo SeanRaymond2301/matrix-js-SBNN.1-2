@@ -1,6 +1,6 @@
 
     //Allows the user to create a matrix object with Nv0 rows, Nv1 columns, and random values in a 2 dimensional array
-function Matrix(rows, cols) {
+function Matrix(rows, cols, data) {
     this.rows = rows;
     this.cols = cols;
     this.data = [];
@@ -56,26 +56,34 @@ function Matrix(rows, cols) {
                     //scalar product
                 for (let i = 0; i < this.cols; i++) {
                     for (let j = 0; j < this.rows; j++) {
-                        this.data[i][j] = this.data[i][j] * m2;
+                        this.data[i][j] *= m2;
                     }
                 }
-            }
             return this.data;
+        }
         }
     }
 
     this.rotate = function() {
-        var a = new Matrix(this.rows, this.cols);
+    var a = new Matrix(this.rows, this.cols);
         for (let i = 0; i < this.cols; i++) {
             for (let j = 0; j < this.rows; j++) {
-                a.data[i][j] == this.data[j][i];
+                a.data[i][j] = this.data[j][i];
             }
         }
         return a.data;
     }
+        //Pass in function as parameter for on the fly matrix method creation for flexibilty
+    this.map = function(funct) {
+        for (let i = 0; i < this.cols; i++) {
+            for (let j = 0; j < this.rows; j++) {
+                this.data[i][j] = funct(this.data[i][j]);
+            }
+        }
+        return this.data;
+    }
 
 }
-
     //Creates a new matrix
         //element wise product
 function add(m1, m2) {
@@ -107,7 +115,6 @@ function multiply(m1, m2) {
             }
             return a.data;
         } else {
-            //add scalar product
             return;
         }
     }
