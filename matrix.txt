@@ -14,7 +14,7 @@ What is the purpose of me making this?
 	I want to accomplish this for another three main goals:
 		I have, since the beginning of learning JavaScript, wanted to create a library. With this project I am going to create two.
 		I have acquired a sense of curiosity towards machine learning and would like to delve into the field with a basic self created Network.
-			I am not doing this to try to reinvent the wheel or to try to compete with other libraries. I know that there will be parts of my library that can be refactored in a much better way. I have been understanding
+			I am not doing this to try to reinvent the wheel or to try to compete with other libraries. I know that there will be parts of my library that can be refactored in a much better way. I have been using
 			JavaScript for less than half of a year.
 			I am doing this because I want to.
 		I would like to further my knowledge / push the limits of my knowledge on JavaScript and the programming mentality.
@@ -38,3 +38,15 @@ My goals for this Matrix Library(to be named at a later date) is to be able to c
 
 This Matrix object that is created should also have methods to manipulate or create new matrixes based on the nature of the method.
 	One of these being a map(); function that allows me to pass in a function as a parameter to modify the data in that way instead of with the built in methods.
+
+
+
+///////////////////////***********************************///////////////////////
+
+	Documentation:
+
+
+	The static Scalar and elementwise products return the entire object. They do not return the data. To use the data arrays, you must reference the product as "name".data.
+		Scalar meaning the data at index i,j plus a variable/number, not another array value
+		This occurs because there is a possible time and place when the user might want to reference a different part of the returned object.
+			I am trying to make this library flexible enough to be used outside of my neural network.

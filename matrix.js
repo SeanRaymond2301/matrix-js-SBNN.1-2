@@ -7,7 +7,7 @@ function Matrix(rows, cols, data) {
 
     for (let i = 0; i < this.cols; i++) {
         this.data[i] = [];
-        for (let j = 0; j < this.orws; j++) {
+        for (let j = 0; j < this.rows; j++) {
             this.data[i][j] = 0;
         }
     }
@@ -35,9 +35,15 @@ function Matrix(rows, cols, data) {
                     }
                 }
                 return this.data;
-            } else {
-                return;
             }
+        } else {
+            //scalar product
+            for (let i = 0; i < this.cols; i++) {
+                for (let j = 0; j < this.rows; j++) {
+                    this.data[i][j] = this.data[i][j] + m2;
+                }
+            }
+            return this.data;
         }
     }
 
@@ -52,19 +58,19 @@ function Matrix(rows, cols, data) {
                     }
                 }
                 return this.data;
-            } else {
-                    //scalar product
-                for (let i = 0; i < this.cols; i++) {
-                    for (let j = 0; j < this.rows; j++) {
-                        this.data[i][j] *= m2;
-                    }
+            }
+        } else {
+                //scalar product
+            for (let i = 0; i < this.cols; i++) {
+                for (let j = 0; j < this.rows; j++) {
+                    this.data[i][j] = this.data[i][j] * m2;
                 }
-            return this.data;
-        }
+            }
+        return this.data;
         }
     }
 
-    this.rotate = function() {
+    this.transpose = function() {
     var a = new Matrix(this.rows, this.cols);
         for (let i = 0; i < this.cols; i++) {
             for (let j = 0; j < this.rows; j++) {
@@ -84,7 +90,7 @@ function Matrix(rows, cols, data) {
     }
 
 }
-    //Creates a new matrix
+    //These create a new matrix object
         //element wise product
 function add(m1, m2) {
     if(typeof(m1) == 'object' && typeof(m2) == 'object') {
@@ -95,10 +101,15 @@ function add(m1, m2) {
                     a.data[i][j] = m1.data[i][j] + m2.data[i][j];
                 }
             }
-            return a.data;
+            return a;
         } else {
-            //add scalar product
-            return;
+            //scalar product
+            for (let i = 0; i < m1.rows; i++) {
+                for (let j = 0; j < m2.rows; j++) {
+                    a.data[i][j] = m1.data[i][j] + m2;
+                }
+            }
+            return a;
         }
     }
 }
@@ -113,13 +124,19 @@ function multiply(m1, m2) {
                     a.data[i][j] = m1.data[i][j] * m2.data[i][j];
                 }
             }
-            return a.data;
+            return a;
         } else {
-            return;
+            //scalar product
+            for (let i = 0; i < m1.rows; i++) {
+                for (let j = 0; j < m2.rows; j++) {
+                    a.data[i][j] = m1.data[i][j] * m2;
+                }
+            }
+            return a;
         }
     }
 }
 
 function dotProduct(m1, m2) {
-    //Make dis a thing
+    //Need to figure out how I am going to do this. For now it will remain empty. Suggestions are welcome.
 }
