@@ -1,7 +1,7 @@
 Creator: Sean Raymond
 Version #: 0.0.1
 
-What is the purpose of me making this?
+### What is the purpose of me making this?
 
 	I have challenged myself to create, by December 31st, 2018, a simple neural network able to solve non linearly separable equations such as XOR.
 	I am doing this in JavaScript due to imposed challenges that colleagues/peers/professionals around me think I cannot overcome easily.
@@ -21,7 +21,7 @@ What is the purpose of me making this?
 
 
 
-To cover some bases:
+### To cover some bases:
 
 	I have chosen matrices as my data structure as I do not know of another data structure that I could implement with my limited knowledge.
 	I have chosen JavaScript(for the TLDRs) because I already have a basic understanding of it and would like to push that further.
@@ -41,9 +41,9 @@ This Matrix object that is created should also have methods to manipulate or cre
 
 
 
-///////////////////////***********************************///////////////////////
+---
 
-	Documentation:
+## Documentation:
 
 
 	The static Scalar and elementwise products return the entire object. They do not return the data. To use the data arrays, you must reference the product as "name".data.
