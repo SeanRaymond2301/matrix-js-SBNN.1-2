@@ -138,5 +138,12 @@ function multiply(m1, m2) {
 }
 
 function dotProduct(m1, m2) {
-    //Need to figure out how I am going to do this. For now it will remain empty. Suggestions are welcome.
+    var m3 = new Matrix(m1.rows, m2.cols);
+    //Need to figure out how I am going to do this.
+    for (let i = 0; i < m1.rows; i++) {
+        for (let j = 0; j < m2.cols; j++) {
+            m3.data[i][j] = m1.data[i][j] * m2.data[j][i];
+        }
+    }
+    return m3;
 }
